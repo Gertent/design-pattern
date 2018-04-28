@@ -1,12 +1,5 @@
 package com.gertent.d04_builder;
 
-import com.gertent.d02_abstract_factory.base_02.MailSender;
-import com.gertent.d02_abstract_factory.base_02.Sender;
-import com.gertent.d02_abstract_factory.base_02.SmsSender;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 工厂类模式提供的是创建单个类的模式，而建造者模式则是将各种产品集中起来进行管理，用来创建复合对象，所谓复合对象就是指某个类具有不同的属性，
  * 其实建造者模式就是前面抽象工厂模式和最后的Test结合起来得到的。我们看一下代码：
@@ -14,19 +7,25 @@ import java.util.List;
  *
  * 从这点看出，建造者模式将很多功能集成到一个类里，这个类可以创造出比较复杂的东西。所以与工程模式的区别就是：工厂模式关注的是创建单个产品，
  * 而建造者模式则关注创建符合对象，多个部分。因此，是选择工厂模式还是建造者模式，依实际情况而定。
+ *
+ *
+ *
+ *
+ * 建造者模式：是将一个复杂的对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+ * 工厂类模式提供的是创建单个类的模式，而建造者模式则是将各种产品集中起来进行管理，用来创建复合对象，所谓复合对象就是指某个类具有不同的属性，其实建造者模式就是前面抽象工厂模式和最后的Test结合起来得到的。
+ * 建造者模式通常包括下面几个角色：
+ * 1、Builder：给出一个抽象接口，以规范产品对象的各个组成成分的建造。这个接口规定要实现复杂对象的哪些部分的创建，并不涉及具体的对象部件的创建。
+ * 2、ConcreteBuilder：实现Builder接口，针对不同的商业逻辑，具体化复杂对象的各部分的创建。 在建造过程完成后，提供产品的实例。
+ * 3、Director：调用具体建造者来创建复杂对象的各个部分，在指导者中不涉及具体产品的信息，只负责保证对象各部分完整创建或按某种顺序创建。
+ * 4、Product：要创建的复杂对象。
+ * 应用实例：
+ * 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的"套餐"。
+ * 2、JAVA 中的 StringBuilder。
+ * 使用场景：
+ * 1、需要生成的对象具有复杂的内部结构。
+ * 2、需要生成的对象内部属性本身相互依赖。
+ * 与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。
  */
 public class Builder {
-    private List<Sender> list = new ArrayList<Sender>();
 
-    public void produceMailSender(int count){
-        for(int i=0; i<count; i++){
-            list.add(new MailSender());
-        }
-    }
-
-    public void produceSmsSender(int count){
-        for(int i=0; i<count; i++){
-            list.add(new SmsSender());
-        }
-    }
 }
