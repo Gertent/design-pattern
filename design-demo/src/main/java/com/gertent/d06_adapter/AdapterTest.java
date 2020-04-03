@@ -1,8 +1,6 @@
 package com.gertent.d06_adapter;
 
-import com.gertent.d06_adapter.base.Source;
 import com.gertent.d06_adapter.base.Sourceable;
-import com.gertent.d06_adapter.base.Targetable;
 
 /**
  * @Description

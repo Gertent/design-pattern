@@ -10,7 +10,7 @@ import java.util.List;
 
 public class CalPriceFactory {
     //这里是一个常量，表示我们扫描策略的包
-    private static final String CAL_PRICE_PACKAGE = "com.xyy.test.com.example.stragedemo";
+    private static final String CAL_PRICE_PACKAGE = CalPriceFactory.class.getPackage().getName();
     private ClassLoader classLoader = getClass().getClassLoader();
 
     //策略列表
